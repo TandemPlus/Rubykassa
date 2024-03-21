@@ -1,5 +1,6 @@
 class RobokassaController < ActionController::Base
   before_action :create_notification
+  protect_from_forgery with: :null_session
 
   def result
     if @notification.valid_result_signature?
